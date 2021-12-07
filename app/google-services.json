@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "106592372342",
+    "firebase_url": "https://android-project-final-book2joy-default-rtdb.firebaseio.com",
+    "project_id": "android-project-final-book2joy",
+    "storage_bucket": "android-project-final-book2joy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106592372342:android:2d945320ddbb17dc928157",
+        "android_client_info": {
+          "package_name": "com.android.book2joy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106592372342-84ag7v4b8vpd41nadjtpoffccdup5dpm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.book2joy",
+            "certificate_hash": "f78969f2b722b35b65edb852eb969d93848d53a9"
+          }
+        },
+        {
+          "client_id": "106592372342-89u2ksteg1nub81an02cn0io3j1sc44o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwxDLYPnPx1y04MThehOx7oSc6Qfz8j-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106592372342-89u2ksteg1nub81an02cn0io3j1sc44o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

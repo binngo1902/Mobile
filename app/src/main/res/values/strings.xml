@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Loginscreen</string>
+    <string name="web_client_id">106592372342-89u2ksteg1nub81an02cn0io3j1sc44o.apps.googleusercontent.com</string>
+    <string-array name="sexes">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+</resources>
