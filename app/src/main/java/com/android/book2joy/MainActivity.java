@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.android.book2joy.Adapter.ViewPagerAdapter;
 import com.android.book2joy.Fragments.HomeFrag;
 import com.android.book2joy.Fragments.Recommendation;
 import com.android.book2joy.model.Booking;
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity
 		final ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
 		viewPagerAdapter.addFrag(new HomeFrag(),"Home");
 		viewPagerAdapter.addFrag(new Recommendation(),"Recommendations");
+
 		viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 			@Override
 			public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -88,34 +90,6 @@ public class MainActivity extends AppCompatActivity
 		((TextView)toolbar.findViewById(R.id.cartCount)).setText(String.valueOf(cur+n));
 	}
 
-	class ViewPagerAdapter extends FragmentPagerAdapter {
-		private final List<Fragment> mFragmentList = new ArrayList<>();
-		private final List<String> mFragmentTitleList = new ArrayList<>();
 
-		public ViewPagerAdapter(FragmentManager manager) {
-			super(manager,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-
-		}
-
-		@Override
-		public Fragment getItem(int position) {
-			return mFragmentList.get(position);
-		}
-
-		@Override
-		public int getCount() {
-			return mFragmentList.size();
-		}
-
-		public void addFrag(Fragment fragment, String title) {
-			mFragmentList.add(fragment);
-			mFragmentTitleList.add(title);
-		}
-
-		@Override
-		public CharSequence getPageTitle(int position) {
-			return mFragmentTitleList.get(position);
-		}
-	}
 }
 
