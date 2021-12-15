@@ -16,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.android.book2joy.Adapter.ViewPagerAdapter;
 import com.android.book2joy.Fragments.HomeFrag;
+import com.android.book2joy.Fragments.InfoFragment;
 import com.android.book2joy.Fragments.Recommendation;
 import com.android.book2joy.model.Booking;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -58,8 +59,8 @@ public class MainActivity extends AppCompatActivity
 	private void setupViewPager(final ViewPager viewPager) {
 		final ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
 		viewPagerAdapter.addFrag(new HomeFrag(),"Home");
-		viewPagerAdapter.addFrag(new Recommendation(),"Recommendations");
-
+		viewPagerAdapter.addFrag(new Recommendation(),"Favorite");
+		viewPagerAdapter.addFrag(new InfoFragment(), "Infor");
 		viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 			@Override
 			public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity
 					((Recommendation)viewPagerAdapter.getItem(position)).updateList();
 
 				}
-				else{
+				else if(position==0){
 					((HomeFrag)viewPagerAdapter.getItem(position)).updateList();
 				}
 			}

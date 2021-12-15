@@ -3,9 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Book2Joy/app/src/main/res/drawable/circular_grey_bordersolid.xml" value="0.15416666666666667" />
+        <entry key="..\:/Book2Joy/app/src/main/res/drawable/circularbordersolid.xml" value="0.15416666666666667" />
+        <entry key="..\:/Book2Joy/app/src/main/res/drawable/ic_baseline_format_align_left_24.xml" value="0.15416666666666667" />
+        <entry key="..\:/Book2Joy/app/src/main/res/drawable/ic_call_24dp.xml" value="0.15416666666666667" />
+        <entry key="..\:/Book2Joy/app/src/main/res/drawable/ic_email_24dp.xml" value="0.15416666666666667" />
+        <entry key="..\:/Book2Joy/app/src/main/res/drawable/ic_location_24dp.xml" value="0.15416666666666667" />
+        <entry key="..\:/Book2Joy/app/src/main/res/drawable/ic_sex.xml" value="0.15416666666666667" />
+        <entry key="..\:/Book2Joy/app/src/main/res/drawable/ic_signout.xml" value="0.15416666666666667" />
+        <entry key="..\:/Book2Joy/app/src/main/res/drawable/tickinsidecircle.xml" value="0.15416666666666667" />
         <entry key="..\:/Book2Joy/app/src/main/res/layout/activity_hotel_info.xml" value="0.25416666666666665" />
         <entry key="..\:/Book2Joy/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Book2Joy/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Book2Joy/app/src/main/res/layout/fragment_info.xml" value="0.25416666666666665" />
         <entry key="..\:/Book2Joy/app/src/main/res/layout/fragment_recommendation.xml" value="0.25416666666666665" />
       </map>
     </option>
