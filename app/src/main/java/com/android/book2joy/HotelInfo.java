@@ -93,7 +93,6 @@ public class HotelInfo extends AppCompatActivity {
             public void onClick(View v) {
 
                 setBooking(false);
-                MainActivity.updatec(1);
                 Log.d("ononon", "onClick: ");
                 finish();
 

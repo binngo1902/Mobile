@@ -3,9 +3,11 @@ package com.android.book2joy.Fragments;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -13,13 +15,24 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.book2joy.Adapter.HotelAdapter;
+import com.android.book2joy.MainActivity;
+import com.android.book2joy.model.Hotel;
 import com.android.book2joy.model.HotelResult;
 import com.android.book2joy.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class HomeFrag extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -107,27 +120,34 @@ public class HomeFrag extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("hotels");
         HotelAdapter hotelAdapter=new HotelAdapter(getContext());
         Gson gson=new Gson();
-
+        List<Hotel> list = new ArrayList<>();
         if(getHotels()==null) {
 
+            mDatabase.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for(DataSnapshot child : snapshot.getChildren()){
+                        Hotel hotel = snapshot.getValue(Hotel.class);
+                        list.add(hotel);
+                    }
+                    hotelAdapter.setHotels(list);
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            BufferedReader br = null;
-            try {
-                br = new BufferedReader(new InputStreamReader(getContext().getAssets().open("hotels.json")));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            hotelResult =gson.fromJson(br, HotelResult.class);
+                }
+            });
 
 
         }
         else {
             hotelResult=gson.fromJson(getHotels(),HotelResult.class);
+
         }
 
-        hotelAdapter.setHotels(hotelResult.getHotels());
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(hotelAdapter);
 

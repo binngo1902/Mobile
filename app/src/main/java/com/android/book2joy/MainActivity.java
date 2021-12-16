@@ -17,6 +17,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.android.book2joy.Adapter.ViewPagerAdapter;
 import com.android.book2joy.Fragments.HomeFrag;
 import com.android.book2joy.Fragments.InfoFragment;
+import com.android.book2joy.Fragments.MapsFragment;
 import com.android.book2joy.Fragments.Recommendation;
 import com.android.book2joy.model.Booking;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity
 		viewPagerAdapter.addFrag(new HomeFrag(),"Home");
 		viewPagerAdapter.addFrag(new Recommendation(),"Favorite");
 		viewPagerAdapter.addFrag(new InfoFragment(), "Infor");
+		viewPagerAdapter.addFrag(new MapsFragment(), "map");
 		viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 			@Override
 			public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

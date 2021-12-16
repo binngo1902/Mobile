@@ -95,9 +95,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="Book"
-                android:theme="@style/Theme.MaterialComponents"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Button" />
+                android:text="View"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                android:theme="@style/Theme.MaterialComponents" />
 
 
         </RelativeLayout>
